@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- **1. Parent Configuration** -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.3.5</version> <!-- Use the Spring Boot version you're targeting -->
+		<relativePath/> <!-- This allows Maven to look up the parent from your repository -->
+	</parent>
+
+<!--	&lt;!&ndash; **2. Project Metadata** &ndash;&gt;-->
+<!--	<groupId>com.example</groupId>-->
+	<artifactId>todoapp</artifactId>
+<!--	<version>0.0.1-SNAPSHOT</version>-->
+<!--	<name>TodoApp</name>-->
+<!--	<description>A simple To-Do application backend using Spring Boot</description>-->
+<!--	<packaging>jar</packaging>-->
+
+	<!-- **3. Properties** -->
+	<properties>
+		<java.version>17</java.version> <!-- Ensure this matches your JDK version -->
+	</properties>
+
+	<!-- **4. Dependencies** -->
+	<dependencies>
+		<!-- Spring Web -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<!-- Version is inherited from the parent -->
+		</dependency>
+
+		<!-- Spring Data JPA -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<!-- Version is inherited from the parent -->
+		</dependency>
+
+		<!-- H2 Database -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+			<!-- Version is inherited from the parent -->
+		</dependency>
+
+		<!-- Lombok (Optional) -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.34</version>
+			<scope>provided</scope>
+			<!-- Version is managed by Lombok's own Maven repository or can be specified -->
+		</dependency>
+
+		<!-- Spring Boot DevTools (Optional) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+			<!-- Version is inherited from the parent -->
+		</dependency>
+
+		<!-- Testing Dependencies -->
+
+	</dependencies>
+
+	<!-- **5. Build Plugins** -->
+	<build>
+		<plugins>
+			<!-- Spring Boot Maven Plugin -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!-- Version is inherited from the parent -->
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version> <!-- Ensure you have a compatible version -->
+				<configuration>
+					<source>17</source> <!-- Match your Java version -->
+					<target>17</target>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>1.18.34</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+
+
+</project>
